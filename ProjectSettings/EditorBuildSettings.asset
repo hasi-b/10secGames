@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Navigante.unity
     guid: 9cebff58373b8ce4c8f4878621f6423f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SohamTemplate.unity
     guid: ec43e27ac52dfb34390bf885ba5be876
   - enabled: 1

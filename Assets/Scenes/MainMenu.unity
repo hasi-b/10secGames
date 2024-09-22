@@ -1434,6 +1434,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winClip: {fileID: 0}
   looseClip: {fileID: 0}
+  miscClip: {fileID: 0}
+  actionClip: {fileID: 0}
 --- !u!4 &1633148630
 Transform:
   m_ObjectHideFlags: 0
@@ -1461,6 +1463,6 @@ SceneRoots:
   - {fileID: 160640475}
   - {fileID: 84549440}
   - {fileID: 1438477230}
-  - {fileID: 1185836049}
   - {fileID: 759109986}
+  - {fileID: 1185836049}
   - {fileID: 1633148630}
