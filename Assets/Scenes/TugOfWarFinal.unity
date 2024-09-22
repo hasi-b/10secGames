@@ -4106,6 +4106,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8511778058320823246, guid: 1e435105e9360a14db6569ab6604f0e8, type: 3}
+      propertyPath: opponentForce
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

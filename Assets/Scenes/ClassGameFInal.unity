@@ -2026,9 +2026,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f5a052484ca3784da0973f901fcf9e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winClip: {fileID: 8300000, guid: eb0ffaa39ee02844b8e446b16b9618bf, type: 3}
-  looseClip: {fileID: 8300000, guid: 041dd41cabeca3e4181c30719510dc07, type: 3}
-  miscClip: {fileID: 8300000, guid: 658d794275c3f2f4093e07c054552bb3, type: 3}
+  winClip: {fileID: 8300000, guid: 1184d5aed4330f34e8443341c1a49cdc, type: 3}
+  looseClip: {fileID: 8300000, guid: 09333ebb97e243040880c8514b7933d7, type: 3}
+  miscClip: {fileID: 0}
   actionClip: {fileID: 0}
 --- !u!1 &591710122
 GameObject:
@@ -2908,8 +2908,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 087459be7a773ea4e9d09dab030455fa, type: 3}
-  m_Resource: {fileID: 8300000, guid: 087459be7a773ea4e9d09dab030455fa, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 552094cab31670742bea14355725708d, type: 3}
+  m_Resource: {fileID: 8300000, guid: 552094cab31670742bea14355725708d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
