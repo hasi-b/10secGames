@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().buildIndex+1>=SceneManager.sceneCountInBuildSettings) {
 
-                i = 1;
+                i = 0;
             }
             else
             {

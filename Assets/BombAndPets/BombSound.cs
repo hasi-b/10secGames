@@ -11,7 +11,7 @@ public class BombSound : MonoBehaviour
 
     public void PlayGiftSound()
     {
-        SoundManager.instance.PlayMiscClip();
+        SoundManager.instance.PlayMiscNormalClip();
 
     }
 }

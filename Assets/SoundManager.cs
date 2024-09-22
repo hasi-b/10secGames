@@ -36,6 +36,12 @@ public class SoundManager : MonoBehaviour
     }
 
 
+    public void PlayMiscNormalClip()
+    {
+        PlaySound(miscClip);
+    }
+
+
 
     public void PlayMiscClip()
     {
