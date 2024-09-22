@@ -2077,7 +2077,7 @@ MonoBehaviour:
   player: {fileID: 152049645}
   instructionText: {fileID: 1814379121}
   timerText: {fileID: 1703142995}
-  timeLimit: 10
+  timeLimit: 7
   isGameOver: 0
   universalGameController: {fileID: 86992223}
   targetBuilding: 

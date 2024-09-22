@@ -4852,6 +4852,7 @@ GameObject:
   - component: {fileID: 8549609790180012096}
   - component: {fileID: 8859867164134848681}
   - component: {fileID: -6120077261391903649}
+  - component: {fileID: 120476181472412480}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -5071,8 +5072,9 @@ MonoBehaviour:
   _showInfo: 1
   _explanation: "When a collision with a trigger with tags [Ground,Cursor] starts:\n         
     disables component Bomb (UnityEngine.BoxCollider2D)\n          play particle
-    system FX_Fireworks_Yellow_Small\n then, at 0.2 seconds, \n          disables
-    object Bomb_body\n then, at 0.5 seconds, \n          destroys this object\n"
+    system FX_Fireworks_Yellow_Small\n          execute Unity event\n then, at 0.2
+    seconds, \n          disables object Bomb_body\n then, at 0.5 seconds, \n         
+    destroys this object\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 1
@@ -5104,6 +5106,8 @@ MonoBehaviour:
     action: {fileID: 8970056104673144954}
   - delay: 0.5
     action: {fileID: 6609532928165834518}
+  - delay: 0
+    action: {fileID: 120476181472412480}
   isTrigger: 1
   eventType: 0
   tags:
@@ -5131,6 +5135,41 @@ MonoBehaviour:
   actionConditions: []
   target: {fileID: 6501710302272725491}
   state: 1
+--- !u!114 &120476181472412480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136350108079003057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7770dfe0b94ccf643bfc83ed5044b8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Execute Unity event
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2673502706828400735}
+        m_TargetAssemblyTypeName: BombSound, Assembly-CSharp
+        m_MethodName: PlayBombSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1846272218355067507
 GameObject:
   m_ObjectHideFlags: 0
@@ -5477,6 +5516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8915280940673347049}
   - component: {fileID: 2250963663698535521}
+  - component: {fileID: 2673502706828400735}
   m_Layer: 0
   m_Name: Bomb_body
   m_TagString: Untagged
@@ -5555,3 +5595,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2673502706828400735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5153147301908345643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dbc57fa866b7543a2280ca9997012f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

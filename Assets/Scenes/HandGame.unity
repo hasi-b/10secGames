@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dccec65ef504b9b408549960b6689c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTime: 6
+  countdownTime: 7
   currentTime: 0
   isWinCondition: 0
   LifeCounter: 5

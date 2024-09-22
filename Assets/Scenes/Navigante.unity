@@ -826,7 +826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dccec65ef504b9b408549960b6689c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTime: 6
+  countdownTime: 7
   currentTime: 0
   isWinCondition: 0
   LifeCounter: 5
@@ -2082,6 +2082,7 @@ MonoBehaviour:
   winClip: {fileID: 8300000, guid: eb0ffaa39ee02844b8e446b16b9618bf, type: 3}
   looseClip: {fileID: 8300000, guid: 041dd41cabeca3e4181c30719510dc07, type: 3}
   miscClip: {fileID: 8300000, guid: 658d794275c3f2f4093e07c054552bb3, type: 3}
+  actionClip: {fileID: 0}
 --- !u!1 &1037429508
 GameObject:
   m_ObjectHideFlags: 0

@@ -5242,7 +5242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61a2aee79590a749bf98f131a14cca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTickets: 5
+  maxTickets: 7
   ticketCounterText: {fileID: 908178213}
   playerControl: {fileID: 1310726373}
 --- !u!1 &2069864444

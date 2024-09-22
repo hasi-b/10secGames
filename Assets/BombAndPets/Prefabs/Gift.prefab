@@ -4844,6 +4844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5792588270807569807}
   - component: {fileID: 1494936604775715937}
+  - component: {fileID: 7055827846481317899}
   m_Layer: 0
   m_Name: Gift_body
   m_TagString: Untagged
@@ -4921,6 +4922,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7055827846481317899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3069121215121672751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dbc57fa866b7543a2280ca9997012f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9154889546936348692
 GameObject:
   m_ObjectHideFlags: 0
@@ -4939,6 +4952,7 @@ GameObject:
   - component: {fileID: 8236805835698668776}
   - component: {fileID: 2253389042988539653}
   - component: {fileID: 1972359663023643955}
+  - component: {fileID: 185512868965909135}
   m_Layer: 0
   m_Name: Gift
   m_TagString: Untagged
@@ -5157,9 +5171,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _showInfo: 1
   _explanation: "When a collision with a trigger with tags [Ground,Cursor] starts:\n         
-    disables component Gift (UnityEngine.BoxCollider2D)\n          play particle
-    system FX_Fireworks_Yellow_Small\n then, at 0.2 seconds, \n          disables
-    object Gift_body\n then, at 0.5 seconds, \n          destroys this object\n"
+    execute Unity event\n          disables component Gift (UnityEngine.BoxCollider2D)\n         
+    play particle system FX_Fireworks_Yellow_Small\n then, at 0.2 seconds, \n         
+    disables object Gift_body\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 1
@@ -5167,13 +5181,13 @@ MonoBehaviour:
   preConditions: []
   actions:
   - delay: 0
+    action: {fileID: 185512868965909135}
+  - delay: 0
     action: {fileID: 1972359663023643955}
   - delay: 0
     action: {fileID: 8236805835698668776}
   - delay: 0.2
     action: {fileID: 4286310824893090590}
-  - delay: 0.5
-    action: {fileID: 6545058608901506405}
   isTrigger: 1
   eventType: 0
   tags:
@@ -5201,3 +5215,38 @@ MonoBehaviour:
   actionConditions: []
   target: {fileID: 2202836510720202974}
   state: 1
+--- !u!114 &185512868965909135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9154889546936348692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7770dfe0b94ccf643bfc83ed5044b8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Execute Unity event
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7055827846481317899}
+        m_TargetAssemblyTypeName: BombSound, Assembly-CSharp
+        m_MethodName: PlayGiftSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

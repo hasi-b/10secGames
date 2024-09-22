@@ -1375,7 +1375,6 @@ GameObject:
   m_Component:
   - component: {fileID: 477581878}
   - component: {fileID: 477581883}
-  - component: {fileID: 477581882}
   - component: {fileID: 477581881}
   - component: {fileID: 477581880}
   - component: {fileID: 477581879}
@@ -1474,29 +1473,6 @@ MonoBehaviour:
   initialDelayEnable: 0
   initialDelay: {x: 5, y: 5}
   timeInterval: {x: 2, y: 2}
---- !u!114 &477581882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477581877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 766d16681200cf841a49e1df59f6076f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showInfo: 1
-  _explanation: Plays sound prompt at volume 1 and at pitch 1
-  description: 
-  enableAction: 1
-  hasTags: 0
-  actionTags: []
-  hasConditions: 0
-  actionConditions: []
-  clip: {fileID: 8300000, guid: f29eb08a6fce9e54db075aa85dca9e92, type: 3}
-  volume: {x: 1, y: 1}
-  pitch: {x: 1, y: 1}
 --- !u!114 &477581883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1510,8 +1486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: "When this object is created:\n          plays sound prompt at volume
-    1 and at pitch 1\n"
+  _explanation: "When this object is created:\n          [NULL]\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 0
@@ -1519,7 +1494,7 @@ MonoBehaviour:
   preConditions: []
   actions:
   - delay: 0
-    action: {fileID: 477581882}
+    action: {fileID: 0}
 --- !u!1 &591055386
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,7 +2324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1158645846
 Transform:
   m_ObjectHideFlags: 0
@@ -3480,7 +3455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1985038272
 Transform:
   m_ObjectHideFlags: 0
@@ -3974,8 +3949,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winClip: {fileID: 8300000, guid: 511e38bfca9aa9f4eab75ebc4eb29439, type: 3}
   looseClip: {fileID: 8300000, guid: 338189aeb7706ce4a8d237c6120b4aa0, type: 3}
-  miscClip: {fileID: 0}
-  actionClip: {fileID: 0}
+  miscClip: {fileID: 8300000, guid: 5d06c7cc42ade914ba51702e2e2d5e51, type: 3}
+  actionClip: {fileID: 8300000, guid: c3092f687892b214088dde46e744116c, type: 3}
 --- !u!1 &2092516295
 GameObject:
   m_ObjectHideFlags: 0
