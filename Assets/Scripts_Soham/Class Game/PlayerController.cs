@@ -17,15 +17,28 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Get input from the player (arrow keys or WASD)
-        movement.x = Input.GetAxisRaw("Horizontal"); // Left (-1) / Right (1)
-        movement.y = Input.GetAxisRaw("Vertical");   // Down (-1) / Up (1)
+        // Only allow movement input if the game is not over
+        if (!gameController.isGameOver)
+        {
+            // Get input from the player (arrow keys or WASD)
+            movement.x = Input.GetAxisRaw("Horizontal"); // Left (-1) / Right (1)
+            movement.y = Input.GetAxisRaw("Vertical");   // Down (-1) / Up (1)
+        }
+        else
+        {
+            // If the game is over, stop player movement
+            movement = Vector2.zero;
+        }
     }
 
     void FixedUpdate()
     {
-        // Move the player by applying movement to the Rigidbody2D
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        // Only move the player if the game is not over
+        if (!gameController.isGameOver)
+        {
+            // Move the player by applying movement to the Rigidbody2D
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
     }
 
     // Ensure the player does not pass through walls using colliders
