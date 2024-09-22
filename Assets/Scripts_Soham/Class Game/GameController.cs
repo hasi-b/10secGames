@@ -11,7 +11,8 @@ public class GameController : MonoBehaviour
     public float timeLimit = 10f;     // 10-second timer
     private float timeRemaining;
     public bool isGameOver = false;
-
+    [SerializeField]
+    GameObject universalGameController;
 
     // Array to store building tags ('G', 'Z', 'S', 'F')
     private string[] buildingTags = { "BuildingG", "BuildingZ", "BuildingS"};
@@ -21,7 +22,8 @@ public class GameController : MonoBehaviour
     public Sprite normalBackground;           // The normal background during gameplay
     public Sprite victoryBackground;          // The background to show when the player wins
     public Sprite defeatBackground;           // The background to show when the player loses
-
+    [SerializeField]
+    GameObject timer;
     void Start()
     {
         // Set the timer to the time limit
@@ -57,6 +59,10 @@ public class GameController : MonoBehaviour
         isGameOver = true;
         if (won)
         {
+            timer.SetActive(false);
+            SoundManager.instance.PlayWinClip();
+            universalGameController.GetComponent<GameManager>().enabled = true;
+            GameManager.instance.isWinCondition = true;
             // instructionText.text = "You win!";
             if (backgroundImage != null && victoryBackground != null)
             {
@@ -65,6 +71,10 @@ public class GameController : MonoBehaviour
         }
         else
         {
+            timer.SetActive(false);
+            SoundManager.instance.PlayLoseClip();
+            universalGameController.GetComponent<GameManager>().enabled = true;
+            GameManager.instance.isWinCondition = false;
             // instructionText.text = "Time's up! You lose!";
             if (backgroundImage != null && defeatBackground != null)
             {
@@ -73,12 +83,9 @@ public class GameController : MonoBehaviour
         }
 
         // Optionally restart the game after a delay
-        Invoke("RestartGame", 2f);  // Restart after 2 seconds
+         // Restart after 2 seconds
     }
 
     // Restart the game (reload the scene)
-    void RestartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+    
 }
