@@ -1436,6 +1436,7 @@ GameObject:
   - component: {fileID: 474175454}
   - component: {fileID: 474175453}
   - component: {fileID: 474175452}
+  - component: {fileID: 474175456}
   m_Layer: 5
   m_Name: Prompt Text
   m_TagString: Untagged
@@ -1459,7 +1460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -187.99988, y: 54.00003}
+  m_AnchoredPosition: {x: -618, y: -3}
   m_SizeDelta: {x: 1600, y: 500}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &474175452
@@ -1469,7 +1470,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474175450}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 901970b618aa1c4489b6c7410f963e95, type: 3}
   m_Name: 
@@ -1493,7 +1494,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474175450}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe33e4a0e2979294d8e04d307e34bb03, type: 3}
   m_Name: 
@@ -1529,7 +1530,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pull your colleagues
+  m_text: Pull your colleagues!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f522b74de3bfce440b3b903995806b66, type: 2}
   m_sharedMaterial: {fileID: -77730743353603043, guid: f522b74de3bfce440b3b903995806b66, type: 2}
@@ -1556,8 +1557,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 79.2
-  m_fontSizeBase: 79.2
+  m_fontSize: 205.8
+  m_fontSizeBase: 205.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1594,7 +1595,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 908.624, y: -170.92902, z: -521.7881, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1608,6 +1609,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474175450}
   m_CullTransparentMesh: 1
+--- !u!114 &474175456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474175450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd7998d335e387f4faa6eefa60f20d1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breathScale: {x: 1.05, y: 1.05, z: 1.05}
+  breathDuration: 0.3
 --- !u!1 &539593970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,7 +1756,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.799988, y: -59.1}
+  m_AnchoredPosition: {x: -5.7998047, y: -59.099976}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!1001 &645228794
@@ -3816,8 +3831,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -65, y: 23}
-  m_SizeDelta: {x: 806.236, y: 691.473}
+  m_AnchoredPosition: {x: 218.2, y: 23.6}
+  m_SizeDelta: {x: 1400.6, y: 1010.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1717146993
 MonoBehaviour:
@@ -4106,9 +4121,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8511778057319661327, guid: 1e435105e9360a14db6569ab6604f0e8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511778058320823246, guid: 1e435105e9360a14db6569ab6604f0e8, type: 3}
+      propertyPath: playerForce
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 8511778058320823246, guid: 1e435105e9360a14db6569ab6604f0e8, type: 3}
       propertyPath: opponentForce
-      value: 4
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511778058320823246, guid: 1e435105e9360a14db6569ab6604f0e8, type: 3}
+      propertyPath: increaseOForce
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

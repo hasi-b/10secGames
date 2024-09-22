@@ -36,6 +36,12 @@ public class TogController : MonoBehaviour
     Rigidbody2D rb;
     void Start()
     {
+        
+        //InstantiateCharacters(Player, Opponent);
+    }
+
+    private void OnEnable()
+    {
         StartCoroutine(StartApplyingForces());
         rb = GetComponent<Rigidbody2D>();
         tempOForce = opponentForce;
@@ -55,7 +61,6 @@ public class TogController : MonoBehaviour
         OpponentName.text = Characters[OFaceInt].Name;
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0;
-        //InstantiateCharacters(Player, Opponent);
     }
     IEnumerator StartApplyingForces()
     {
@@ -115,15 +120,16 @@ public class TogController : MonoBehaviour
     //}
     void FindLooser()
     {
+        Debug.Log("LOOOOSERR");
         //    float pDistance = Vector2.Distance(Player.transform.localPosition, MidPoint.transform.localPosition);
         //    float oDistance = Vector2.Distance(Opponent.transform.localPosition, MidPoint.transform.localPosition);
         print(pDistance + " " + oDistance);
-        if (pDistance < 1)
+        if (pDistance < 0.01f)
         {
             Lose();
             RemoveForces();
         }
-        else if (oDistance < 1)
+        else if (oDistance < 0.01f)
         {
             Win();
             RemoveForces();
@@ -135,11 +141,11 @@ public class TogController : MonoBehaviour
         {
             tapUp = false;
             nullForces = false;
-            opponentForce = tempOForce;
+            //opponentForce = tempOForce;
             playerForce += 0.6f;
             AddForce(-1, playerForce);
         }
-        else if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Z))
+        else if (Input.GetKeyUp(KeyCode.Space))
         {
             tapUp = true;
         }
@@ -149,7 +155,7 @@ public class TogController : MonoBehaviour
     {                    
         if (tapUp)
         {
-            if(tapUpTime < 0.35f) // if it's been less than 0.X f seconds the player hasn't tapped yet
+            if(tapUpTime < 0.5f) // if it's been less than 0.X f seconds the player hasn't tapped yet
             {                      //increase the time
                 tapUpTime += Time.deltaTime;
             }
@@ -177,7 +183,8 @@ public class TogController : MonoBehaviour
     }
     void Win()
     {
-
+        _applyOForce = false;
+        _applyPForce = false;
         isPaused = true;
         GameManager.instance.isWinCondition = true;
 
