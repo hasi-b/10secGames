@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -9,10 +10,17 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI timerText;            // UI Text to show the countdown timer
     public float timeLimit = 10f;     // 10-second timer
     private float timeRemaining;
+    public bool isGameOver = false;
+
 
     // Array to store building tags ('G', 'Z', 'S', 'F')
-    private string[] buildingTags = { "BuildingG", "BuildingZ", "BuildingS", "BuildingF" };
+    private string[] buildingTags = { "BuildingG", "BuildingZ", "BuildingS"};
     public string targetBuilding;    // The building the player needs to find
+    // UI Background Image and Sprites
+    public Image backgroundImage;             // Reference to the Image component in the Canvas
+    public Sprite normalBackground;           // The normal background during gameplay
+    public Sprite victoryBackground;          // The background to show when the player wins
+    public Sprite defeatBackground;           // The background to show when the player loses
 
     void Start()
     {
@@ -23,13 +31,13 @@ public class GameController : MonoBehaviour
         targetBuilding = buildingTags[Random.Range(0, buildingTags.Length)];
 
         // Update the instruction text to show the correct building to find
-        instructionText.text = "Find Building: " + targetBuilding.Substring(8); // Get the 'G', 'Z', 'S', 'F' part from tag
+        instructionText.text = targetBuilding.Substring(8); // Get the 'G', 'Z', 'S' part from tag
     }
 
     void Update()
     {
         // Update the countdown timer
-        if (timeRemaining > 0)
+        if (!isGameOver && timeRemaining > 0)
         {
             timeRemaining -= Time.deltaTime;
             timerText.text = "Time: " + Mathf.Ceil(timeRemaining).ToString();
@@ -45,17 +53,27 @@ public class GameController : MonoBehaviour
     // End the game and display a win or lose message
     public void GameOver(bool won)
     {
+        // Set the game over flag to true to stop the timer
+        isGameOver = true;
         if (won)
         {
-            instructionText.text = "You win!";
+            // instructionText.text = "You win!";
+            if (backgroundImage != null && victoryBackground != null)
+            {
+                backgroundImage.sprite = victoryBackground;
+            }
         }
         else
         {
-            instructionText.text = "Time's up! You lose!";
+            // instructionText.text = "Time's up! You lose!";
+            if (backgroundImage != null && defeatBackground != null)
+            {
+                backgroundImage.sprite = defeatBackground;
+            }
         }
 
         // Optionally restart the game after a delay
-        Invoke("RestartGame", 2f);  // Restart after 3 seconds
+        Invoke("RestartGame", 2f);  // Restart after 2 seconds
     }
 
     // Restart the game (reload the scene)
