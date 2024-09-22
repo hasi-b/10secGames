@@ -1182,7 +1182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownTime: 7
   currentTime: 0
-  isWinCondition: 0
+  isWinCondition: 1
   LifeCounter: 5
   timer: {fileID: 1828022988}
   dontShowTimer: 0
