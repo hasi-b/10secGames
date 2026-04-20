@@ -34,12 +34,15 @@ The system shifts interaction from deliberate button presses to subtle physical 
 
 ---
 
-## Technical Implementation
+## Signal Processing (OpenBCI + EMG Joystick Demo)
 
-- **Engine:** Unity (C#)
-- **Input:** EMG sensor (muscle activity)
-- **Signal Processing:** Filtering, threshold detection, normalization
-- **Mapping:** EMG signals mapped to discrete and continuous game actions
+The EMG input was implemented using **OpenBCI hardware** together with an existing open-source repository (**EMG-Joystick-Demo**) as the base signal processing pipeline.
+
+- EMG signals were captured using OpenBCI sensors
+- The EMG-Joystick-Demo repository was used for initial signal acquisition and basic gesture mapping
+- The system provided real-time EMG values representing muscle activation intensity
+- These values were streamed into Unity for gameplay interaction
+- Unity handled the mapping between incoming EMG values and in-game actions (continuous and discrete control)
 
 ---
 
